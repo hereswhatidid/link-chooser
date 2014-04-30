@@ -31,6 +31,15 @@ class Link_Chooser_Admin {
 	protected static $instance = null;
 
 	/**
+	 * Plugin version, used for cache-busting of style and script file references.
+	 *
+	 * @since   1.0.0
+	 *
+	 * @var     string
+	 */
+	const VERSION = '1.0.0';
+
+	/**
 	 * Slug of the plugin screen.
 	 *
 	 * @since    1.0.0
@@ -57,8 +66,8 @@ class Link_Chooser_Admin {
 		/*
 		 * Call $plugin_slug from public plugin class.
 		 */
-		$plugin = Link_Chooser::get_instance();
-		$this->plugin_slug = $plugin->get_plugin_slug();
+//		$plugin = Link_Chooser::get_instance();
+		$this->plugin_slug = 'link-chooser';
 
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
@@ -115,7 +124,7 @@ class Link_Chooser_Admin {
 		} else {
 			$style_path = plugins_url( 'assets/css/styles.min.css', __FILE__ );
 		}
-		wp_enqueue_style( $this->plugin_slug .'-admin-styles', $style_path, array( 'thickbox', 'editor-buttons', 'wp-jquery-ui-dialog' ), Link_Chooser::VERSION );
+		wp_enqueue_style( $this->plugin_slug .'-admin-styles', $style_path, array( 'thickbox', 'editor-buttons', 'wp-jquery-ui-dialog' ), self::VERSION);
 
 	}
 
@@ -133,7 +142,7 @@ class Link_Chooser_Admin {
 		} else {
 			$script_path = plugins_url( 'assets/js/scripts.min.js', __FILE__ );
 		}
-		wp_enqueue_script( $this->plugin_slug . '-admin-script', $script_path, array( 'jquery', 'jquery-ui-dialog' ), Link_Chooser::VERSION );
+		wp_enqueue_script( $this->plugin_slug . '-admin-script', $script_path, array( 'jquery', 'jquery-ui-dialog' ), self::VERSION );
 		$dialogTranslation = array(
 			'title' => __( 'Insert/edit link', $this->plugin_slug ),
 			'update' => __( 'Update', $this->plugin_slug ),

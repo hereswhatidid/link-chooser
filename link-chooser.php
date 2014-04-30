@@ -8,17 +8,17 @@
  * @copyright 2014 Gabe Shackle
  *
  * @wordpress-plugin
- * Plugin Name:       Link Chooser
- * Plugin URI:        http://hereswhatidid.com/plugins/link-chooser/
- * Description:       Use the core Add/edit Link dialog anywhere within the admin via JavaScript or simple field attributes.
- * Version:           1.0.0
- * Author:            Gabe Shackle
- * Author URI:        http://hereswhatidid.com/
- * Text Domain:       link-chooser-locale
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /languages
- * GitHub Plugin URI: https://github.com/hereswhatidid/link-chooser/
+Plugin Name:       Link Chooser
+Plugin URI:        http://hereswhatidid.com/plugins/link-chooser/
+Description:       Use the core Add/edit Link dialog anywhere within the admin via JavaScript or simple field attributes.
+Version:           1.0.1
+Author:            Gabe Shackle
+Author URI:        http://hereswhatidid.com/
+Text Domain:       link-chooser-locale
+License:           GPL-2.0+
+License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+Domain Path:       /languages
+GitHub Plugin URI: https://github.com/hereswhatidid/link-chooser/
  */
 
 // If this file is called directly, abort.
@@ -26,16 +26,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/*----------------------------------------------------------------------------*
- * Public-Facing Functionality
- *----------------------------------------------------------------------------*/
+//register_activation_hook( __FILE__, array( 'Link_Chooser', 'activate' ) );
+//register_deactivation_hook( __FILE__, array( 'Link_Chooser', 'deactivate' ) );
 
-require_once( plugin_dir_path( __FILE__ ) . 'public/class-link-chooser.php' );
-
-register_activation_hook( __FILE__, array( 'Link_Chooser', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Link_Chooser', 'deactivate' ) );
-
-add_action( 'plugins_loaded', array( 'Link_Chooser', 'get_instance' ) );
+//add_action( 'plugins_loaded', array( 'Link_Chooser', 'get_instance' ) );
 
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
