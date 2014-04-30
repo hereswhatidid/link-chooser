@@ -50,7 +50,7 @@ git push origin master --tags
 echo 
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
-
+echo "1 Current SVN path: $SVNPATH"
 echo "Exporting the HEAD of master from git to the trunk of SVN"
 git checkout-index -a -f --prefix=$SVNPATH/trunk/
 
@@ -63,7 +63,7 @@ node_modules
 package.json
 .git
 .gitignore" "$SVNPATH/trunk/"
-
+echo "2 Current SVN path: $SVNPATH"
 echo "Changing directory to SVN and committing to trunk"
 cd $SVNPATH/trunk/
 # Add all new files that are not set to be ignored

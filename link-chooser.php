@@ -11,7 +11,7 @@
 Plugin Name:       Link Chooser
 Plugin URI:        http://hereswhatidid.com/plugins/link-chooser/
 Description:       Use the core Add/edit Link dialog anywhere within the admin via JavaScript or simple field attributes.
-Version:           1.0.1
+Version:           1.0.2
 Author:            Gabe Shackle
 Author URI:        http://hereswhatidid.com/
 Text Domain:       link-chooser-locale

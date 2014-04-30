@@ -55,18 +55,6 @@ class Link_Chooser_Admin {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
-
-		/*
-		 * - Uncomment following lines if the admin class should only be available for super admins
-		 */
-		/* if( ! is_super_admin() ) {
-			return;
-		} */
-
-		/*
-		 * Call $plugin_slug from public plugin class.
-		 */
-//		$plugin = Link_Chooser::get_instance();
 		$this->plugin_slug = 'link-chooser';
 
 		// Load admin style sheet and JavaScript.
@@ -94,13 +82,6 @@ class Link_Chooser_Admin {
 	 * @return    object    A single instance of this class.
 	 */
 	public static function get_instance() {
-
-		/*
-		 * - Uncomment following lines if the admin class should only be available for super admins
-		 */
-		/* if( ! is_super_admin() ) {
-			return;
-		} */
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
